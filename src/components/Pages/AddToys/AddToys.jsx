@@ -6,15 +6,15 @@ const AddToys = () => {
 
     const {user} = useState(AuthContext)
 
-    const [allToy,setAllToy] = useState([])
-    const [selectedOption, setSelectedOption] = useState(null);
+    // const [allToy,setAllToy] = useState([])
+    // const [selectedOption, setSelectedOption] = useState(null);
 
     const handleAddToy =(event)=>{
         event.preventDefault()
         // event.skills = selectedOption;
         console.log(event)
         const form = event.target;
-        const select = form.select.value
+        
         const name = form.name.value
         const sellerName = form.sellerName.value
         const sellerEmail = form.sellerEmail.value
@@ -23,10 +23,12 @@ const AddToys = () => {
         const url = form.url.value
         const price = form.price.value
         const rating = form.rating.value
+        const category = form.category.value
         const allToyInfo = {
-            name,sellerName,sellerEmail,quantity,details,url,price,rating
+            name,sellerName,sellerEmail,quantity,details,url,price,rating,category
         }
-        allToyInfo.skills = selectedOption
+        console.log(allToyInfo)
+        // allToyInfo.skills = selectedOption
        
         fetch('http://localhost:5000/alltoys',{
             method:'POST',
@@ -38,18 +40,18 @@ const AddToys = () => {
         })
 .then(res=>res.json())
 .then(data=>console.log(data))
-        console.log(allToyInfo)
+        
     }
    
-    const options = [
-        { value: "disney", label: "disney" },
-        { value: "princess", label: "princess" },
-        { value: "frozen", label: "frozen" },
-        { value: "dolls", label: "dolls" },
-        { value: "donald duck", label: "donald duck" },
-        { value: "animation character", label: "animation character" },
+    // const options = [
+    //     { value: "disney", label: "disney" },
+    //     { value: "princess", label: "princess" },
+    //     { value: "frozen", label: "frozen" },
+    //     { value: "dolls", label: "dolls" },
+    //     { value: "donald duck", label: "donald duck" },
+    //     { value: "animation character", label: "animation character" },
        
-      ];
+    //   ];
 
     return (
         <div>
@@ -96,16 +98,21 @@ const AddToys = () => {
       </div>
       <div className="form-control w-1/2">
         <label className="label">
-          <span className="label-text">Sub Category</span>
+          <span className="label-text">Category</span>
         </label>
-       
-        <Select
+        <select name='category' className="select select-bordered  w-full max-w-xs">
+  <option disabled selected>select one</option>
+  <option>Baby Dolls</option>
+  <option>Barbie Dolls</option>
+  <option>American Girls</option>
+</select>
+        {/* <Select
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
         name='select'
         isMulti
-      />
+      /> */}
       </div>
       
     </div>
