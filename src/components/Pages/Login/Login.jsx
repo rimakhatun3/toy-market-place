@@ -7,8 +7,8 @@ const Login = () => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const from = location.from?.state?.pathname || '/';
-
+  const from =location?.state?.from?.pathname  || '/';
+console.log(location)
 const {logIn} = useContext(AuthContext)
 
 const handleLogIn =(event)=>{
