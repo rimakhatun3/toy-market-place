@@ -8,9 +8,15 @@ const MyToys = () => {
 const {user} = useContext(AuthContext)
 
     const [myToys,setMyToys] = useState([])
+    // const [selected,setSelected] = useState(true)
+
+    // const option ={
+    //   value : accendening
+    // }
     
     useEffect(()=>{
-        fetch(`https://toy-marketplace-server-one.vercel.app/toys/${user?.email}`)
+      // const [type,value] = selected.value.split('-').map(item=>item.toLowerCase())
+        fetch(`https://toy-marketplace-server-one.vercel.app/toys?email?${user?.email}`)
         .then(res=>res.json())
         .then(data=>setMyToys(data))
     },[])
