@@ -8,7 +8,7 @@ const MyToys = () => {
 const {user} = useContext(AuthContext)
 
     const [myToys,setMyToys] = useState([])
-    // const [selected,setSelected] = useState(true)
+    const [selected,setSelected] = useState(true)
 
     // const option ={
     //   value : accendening
@@ -19,7 +19,8 @@ const {user} = useContext(AuthContext)
         fetch(`https://toy-marketplace-server-one.vercel.app/toys?email?${user?.email}`)
         .then(res=>res.json())
         .then(data=>setMyToys(data))
-    },[])
+    },[selected])
+    // console.log(selected)
 
     const handleRemove=(id)=>{
         
@@ -57,8 +58,17 @@ const {user} = useContext(AuthContext)
     }
 
     return (
-        <div>
-             <div className="overflow-x-auto">
+        <div className='mt-10 '>
+
+<div className='text-center mb-8'>
+<select onClick={()=>setSelected(!selected)} className="select select-bordered w-full max-w-xs ">
+  <option disabled selected>sort by</option>
+  <option value='acending'>acending</option>
+  <option value='decending' >decending</option>
+</select>
+</div>
+
+             <div className="overflow-x-auto ">
   <table className="table table-zebra w-full">
     {/* head */}
     <thead>
