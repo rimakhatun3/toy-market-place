@@ -4,23 +4,44 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
+
+// 
 const MyToys = () => {
 const {user} = useContext(AuthContext)
+// const option ={
+//   value :'price-Ascending',
+//   value : 'price-Descending'
+// }
 
     const [myToys,setMyToys] = useState([])
-    const [selected,setSelected] = useState(true)
+    // const [selected,setSelected] = useState(option[0])
+    // const [loadding,setLoadding] = useState(true)
 
-    // const option ={
-    //   value : accendening
-    // }
+    // useEffect(()=>{
+    //   setLoadding(true)
+    //   const fetchProduct = async () =>{
+    //     try {
+  
+    //        const [type,value] = selected.value.split('-').map(item=>item.toLowerCase())
+    //        const response = await fetch(`https://toy-marketplace-server-one.vercel.app/toys?email?${user?.email}&value=${value}$type=${type}`)
+    //        const data = await response.json()
+    //        setMyToys(data)
+    //     }
+    //     finally{
+    //       setTimeout(()=>{
+    //         setLoadding(false)
+    //       },1000)
+    //     }
+    //   }
+    //   fetchProduct()
+    // },[selected])
     
     useEffect(()=>{
-      // const [type,value] = selected.value.split('-').map(item=>item.toLowerCase())
         fetch(`https://toy-marketplace-server-one.vercel.app/toys?email?${user?.email}`)
         .then(res=>res.json())
         .then(data=>setMyToys(data))
-    },[selected])
-    // console.log(selected)
+    },[])
+    
 
     const handleRemove=(id)=>{
         
@@ -61,12 +82,13 @@ const {user} = useContext(AuthContext)
         <div className='mt-10 '>
 
 <div className='text-center mb-8'>
-<select onClick={()=>setSelected(!selected)} className="select select-bordered w-full max-w-xs ">
+<select  className="select select-bordered w-full max-w-xs ">
   <option disabled selected>sort by</option>
-  <option value='acending'>acending</option>
-  <option value='decending' >decending</option>
+  <option value='asending' >acending</option>
+  <option value='descending' >descending</option>
 </select>
 </div>
+
 
              <div className="overflow-x-auto ">
   <table className="table table-zebra w-full">
