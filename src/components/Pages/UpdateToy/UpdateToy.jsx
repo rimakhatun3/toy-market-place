@@ -30,7 +30,7 @@ console.log(toy)
             
           })
 
-          fetch(`http://localhost:5000/mytoy/${toy._id}`,{
+          fetch(`https://toy-marketplace-server-one.vercel.app/mytoy/${toy._id}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'

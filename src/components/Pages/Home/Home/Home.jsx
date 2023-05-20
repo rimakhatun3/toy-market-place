@@ -13,7 +13,7 @@ const [categories ,setCategories] = useState([])
 
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/alltoys/${activetab}`)
+    fetch(`https://toy-marketplace-server-one.vercel.app/alltoys/${activetab}`)
     .then(res=>res.json())
     .then(data=>setCategories(data))
 },[activetab])

@@ -30,7 +30,7 @@ const AddToys = () => {
         console.log(allToyInfo)
         // allToyInfo.skills = selectedOption
        
-        fetch('http://localhost:5000/alltoys',{
+        fetch('https://toy-marketplace-server-one.vercel.app/alltoys',{
             method:'POST',
           headers:{
             'content-type':'application/json'
@@ -43,15 +43,6 @@ const AddToys = () => {
         
     }
    
-    // const options = [
-    //     { value: "disney", label: "disney" },
-    //     { value: "princess", label: "princess" },
-    //     { value: "frozen", label: "frozen" },
-    //     { value: "dolls", label: "dolls" },
-    //     { value: "donald duck", label: "donald duck" },
-    //     { value: "animation character", label: "animation character" },
-       
-    //   ];
 
     return (
         <div>
@@ -106,13 +97,7 @@ const AddToys = () => {
   <option>Barbie Dolls</option>
   <option>American Girls</option>
 </select>
-        {/* <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-        name='select'
-        isMulti
-      /> */}
+       
       </div>
       
     </div>
