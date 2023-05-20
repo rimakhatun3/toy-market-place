@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -9,7 +10,7 @@ const Login = () => {
 
   const from =location?.state?.from?.pathname  || '/';
 console.log(location)
-const {logIn} = useContext(AuthContext)
+const {logIn,signInWithGoogle} = useContext(AuthContext)
 
 const handleLogIn =(event)=>{
   event.preventDefault()
@@ -55,8 +56,12 @@ console.error(error.message)
           
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-[#AEE6AC] text-black">Login</button>
         </div>
+        <div className="form-control mt-6 ">
+          <button onClick={signInWithGoogle} className="btn bg-[#AEE6AC] text-black "><FaGoogle className='mr-2  text-orange-500'/> Sign in With Goggle</button>
+        </div>
+      
       </form>
     </div> 
         </div>

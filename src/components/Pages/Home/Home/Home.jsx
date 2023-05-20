@@ -30,10 +30,10 @@ const handleTabs = (tabName)=>{
 
 
 
-<div className='text-center'>
-<div onClick={()=>handleTabs('Baby Dolls')} className={`btn btn-success bg-[#E6C3AC]${activetab=='Baby Dolls'?'bg-[#E6C3AC]':''}`}>Baby Dolls</div>
-<div onClick={()=>handleTabs('Barbie Dolls')} className={`btn btn-success bg-[#E6C3AC]${activetab=='Barbie Dolls'?'bg-[#E6C3AC]':''}`}>Barbie Dolls</div>
-<div onClick={()=>handleTabs('American Girls')} className={`btn btn-success bg-[#E6C3AC]${activetab=='American Girls'?'bg-[#E6C3AC]':''}`}>American Girls</div>
+<div className='text-center my-8'>
+<div onClick={()=>handleTabs('Baby Dolls')} className={`btn btn-success${activetab=='Baby Dolls'?'bg-[#E6C3AC]':''}`}>Baby Dolls</div>
+<div onClick={()=>handleTabs('Barbie Dolls')} className={`btn btn-success ${activetab=='Barbie Dolls'?'bg-[#E6C3AC]':''}`}>Barbie Dolls</div>
+<div onClick={()=>handleTabs('American Girls')} className={`btn  btn-success${activetab=='American Girls'?'bg-[#E6C3AC]':''}`}>American Girls</div>
 
 </div>
 

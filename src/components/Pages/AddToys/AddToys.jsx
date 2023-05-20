@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-import Select from 'react-select';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
 
     const {user} = useState(AuthContext)
-
-    // const [allToy,setAllToy] = useState([])
-    // const [selectedOption, setSelectedOption] = useState(null);
-
+  
     const handleAddToy =(event)=>{
         event.preventDefault()
-        // event.skills = selectedOption;
         console.log(event)
         const form = event.target;
         
@@ -39,13 +35,21 @@ const AddToys = () => {
            
         })
 .then(res=>res.json())
-.then(data=>console.log(data))
+.then(data=>{
+  if(data.insertedId){
+    Swal.fire(
+      'success',
+      'toy added successfully',
+      'success'
+    )
+  }
+})
         
     }
    
 
     return (
-        <div>
+        <div className='mt-14 border p-10 bg-[#E6BEAC] '>
             <form  onSubmit={handleAddToy}>
                 <div>
                 <div className='w-full flex gap-5'>
@@ -82,16 +86,16 @@ const AddToys = () => {
       </div>
       <div className="form-control w-1/2">
         <label className="label">
-          <span className="label-text">Description</span>
+          <span className="label-text">Rating</span>
         </label>
-        <input type="text" name='details' placeholder='Detail Description'  className="input input-bordered" />
+        <input type="text" name='rating' placeholder='Rating'  className="input input-bordered" />
         
       </div>
       <div className="form-control w-1/2">
         <label className="label">
           <span className="label-text">Category</span>
         </label>
-        <select name='category' className="select select-bordered  w-full max-w-xs">
+        <select name='category' className="select select-bordered   ">
   <option disabled selected>select one</option>
   <option>Baby Dolls</option>
   <option>Barbie Dolls</option>
@@ -116,18 +120,21 @@ const AddToys = () => {
         <input type="text" name='price' placeholder='Price'  className="input input-bordered" />
         
       </div>
-      <div className="form-control w-1/2">
-        <label className="label">
-          <span className="label-text">Rating</span>
-        </label>
-        <input type="text" name='rating' placeholder='Rating'  className="input input-bordered" />
-        
-      </div>
+      
       
     </div>
+
+    <div className="form-control w-full">
+        <label className="label">
+          <span className="label-text">Details</span>
+        </label>
+       
+        <textarea className='border p-4' name="details" id="" cols="30" rows="5" placeholder='Details Description '></textarea>
+        
+      </div>
                 </div>
 
-      <input className="btn bg-[#FF3811] w-full my-4" type="submit" value="order confirm" />
+      <input className="btn bg-[#AEE6AC] w-full my-4" type="submit" value="order confirm" />
     </form>
 </div>
         

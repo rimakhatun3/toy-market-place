@@ -6,13 +6,7 @@ import { FaHeart } from "react-icons/fa";
 
 
 const SingleToyDetails = () => {
-
-    const {id} = useParams()
-    console.log(id)
     const toy = useLoaderData()
-    console.log(toy)
-
-
     return (
         <div>
            <div className=" min-h-screen w-full bg-base-200">

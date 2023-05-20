@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 
 
 const Category = ({category}) => {
-    console.log(category)
     const {url,name,rating,price,_id} = category || {}
     return (
         <div>
-            <div className="card card-compact w-full h-full  bg-base-100 shadow-xl">
-  <figure><img  src={url} alt="Shoes" /></figure>
+            <div className="card card-compact w-full min-h-min  bg-base-100 shadow-lg border">
+  <figure><img className='max-h-56' src={url} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
     <p>Item Price: {price}</p>
@@ -25,7 +24,7 @@ const Category = ({category}) => {
     </div>
     <div className="card-actions justify-end">
     
-      <Link to={`/subcategory/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+      <Link to={`/subcategory/${_id}`}><button className="btn bg-[#AEE6AC] text-black">View Details</button></Link>
     </div>
     </div>
   </div>

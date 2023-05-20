@@ -37,7 +37,7 @@ const Navbar = () => {
         
     return (
         <div>
-     <div className="navbar bg-sky-50">
+     <div className="navbar bg-[#AEE6AC]">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,16 +53,7 @@ const Navbar = () => {
   <div className="navbar-end hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       {navItem}
-      {/* {
-          user?<>
-          <li><Link >My Toys</Link></li>
-        <li><Link >Add A Toys</Link></li>
-          <img src={user?.photoURL} alt="" />
-          <button onClick={handleLogOut} className='btn btn-sm'>LogOut</button>
-          
-          </>
-          :<><Link to='/login'><button className='btn btn-sm'>Login</button></Link></>
-        } */}
+     
     </ul>
   </div>
   

@@ -75,7 +75,7 @@ console.log(toy)
           
         </div>
         <div className="form-control mt-6">
-        <input className="btn bg-[#FF3811] w-full my-4" type="submit" value="updated" />
+        <input className="btn bg-[#AEE6AC]' w-full my-4" type="submit" value="updated" />
         </div>
       </div>
     </form>
