@@ -1,10 +1,12 @@
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Category = ({category}) => {
     console.log(category)
-    const {url,name,rating,price} = category || {}
+    const {url,name,rating,price,_id} = category || {}
     return (
         <div>
             <div className="card card-compact w-full h-full  bg-base-100 shadow-xl">
@@ -23,7 +25,7 @@ const Category = ({category}) => {
     </div>
     <div className="card-actions justify-end">
     
-      <button className="btn btn-primary">View Details</button>
+      <Link to={`/subcategory/${_id}`}><button className="btn btn-primary">View Details</button></Link>
     </div>
     </div>
   </div>
