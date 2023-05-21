@@ -11,6 +11,7 @@ import SingleToyDetails from "../Pages/SingleToyDetails/SingleToyDetails";
 import MyToys from "../Pages/MyToys/MyToys";
 import UpdateToy from "../Pages/UpdateToy/UpdateToy";
 import SubCategory from "../Pages/SubCategory/SubCategory";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
                 path:'/subcategory/:id',
                 element:<PrivateRoute><SubCategory></SubCategory></PrivateRoute>,
                 loader:({params})=>fetch(`https://toy-marketplace-server-one.vercel.app/alltoy/${params.id}`)
+            },
+            {
+                path:'/blogs',
+                element:<Blogs></Blogs>
             }
 
         ]
