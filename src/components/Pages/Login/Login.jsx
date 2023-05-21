@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../title';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 useTitle('login')
@@ -22,6 +23,11 @@ const handleLogIn =(event)=>{
   logIn(email,password)
   .then(result=>{
     console.log(result.user)
+    Swal.fire(
+      'login',
+      'sucessfully login',
+      'success'
+    )
     navigate(from , {replace:true})
   })
   .catch(error=>{

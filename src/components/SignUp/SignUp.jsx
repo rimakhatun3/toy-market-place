@@ -3,6 +3,7 @@ import signupLogo from '../../assets/logos/signup.avif'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import useTitle from '../title';
+import Swal from 'sweetalert2';
 const SignUp = () => {
 useTitle('sign up')
 const {createUser,updateUser} = useContext(AuthContext)
@@ -20,6 +21,11 @@ const handleSignUp=(event)=>{
   .then(result=>{
     // const user = result.user;
     console.log(result)
+    Swal.fire(
+      'register',
+      'sucessfully register',
+      'success'
+    )
     updateUser(name,photo)
     
   })
