@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             {
                 path:'alltoys',
                 element:<AllToys></AllToys>,
-                // loader:()=>fetch('https://toy-marketplace-server-one.vercel.app/alltoys')
+                
             },
             {
                 path:'/singletoy/:id',
