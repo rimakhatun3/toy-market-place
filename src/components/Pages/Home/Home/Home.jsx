@@ -37,7 +37,7 @@ useEffect(()=>{
             <Banner></Banner>
             <Gallerry></Gallerry>
 
-            <section>
+            <section className='bg-[#AEE6AC] px-5 py-5'>
                 <h1 className='text-2xl font-bold text-center my-8'>Exclusive Collection</h1>
                 <div className='space-x-4 text-center'>
                     <button className='py-2 px-6 bg-pink-500 rounded-e-2xl rounded-s-2xl'>Feature Product</button>
@@ -46,7 +46,7 @@ useEffect(()=>{
                 </div>
 
                 <div>
-                <Marquee speed={100} className='mt-5 '>
+                <Marquee speed={100} className='my-5 '>
 
 
   <img className='w-24 mx-5' src={pi1} alt="" />
@@ -58,10 +58,86 @@ useEffect(()=>{
   <img className='w-24 mx-5'  src={pi4} alt="" />
 </Marquee>
                 </div>
-<div className='grid md:grid-cols-2 lg:grid-cols-4'>
+<div className='grid md:grid-cols-2 w-full  lg:grid-cols-4 gap-x-5 gap-y-5'>
     
     
-<div className="card w-96 bg-base-100 shadow-xl">
+<div className="card w-auto bg-base-100 shadow-xl">
+  <figure className="px-10 pt-10">
+    <img src={pi1} alt="Shoes" className="rounded-xl" data-aos='feed-down' />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">baby doll</h2>
+    <p>Your kid Also love It</p>
+    <div className="card-actions flex gap-2">
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+    </div>
+
+    <div >
+        <button  className='btn bg-[#AEE6AC]'>Buy Now</button>
+    </div>
+  </div>
+</div>
+<div className="card w-auto bg-base-100 shadow-xl" data-aos='feed-left'>
+  <figure className="px-10 pt-10">
+    <img src={pi2} alt="Shoes" className="rounded-xl" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">baby doll</h2>
+    <p>Your kid Also love It</p>
+    <div className="card-actions flex gap-2">
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+    </div>
+
+    <div >
+        <button  className='btn bg-[#AEE6AC]'>Buy Now</button>
+    </div>
+  </div>
+</div>
+<div className="card w-auto bg-base-100 shadow-xl data-aos='feed-right'">
+  <figure className="px-10 pt-10">
+    <img src={pi3} alt="Shoes" className="rounded-xl" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">baby doll</h2>
+    <p>Your kid Also love It</p>
+    <div className="card-actions flex gap-2">
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+    </div>
+
+    <div >
+        <button  className='btn bg-[#AEE6AC]'>Buy Now</button>
+    </div>
+  </div>
+</div>
+<div className="card w-auto bg-base-100 shadow-xl" data-aos='feed-up'>
+  <figure className="px-10 pt-10">
+    <img src={pi4} alt="Shoes" className="rounded-xl" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">baby doll</h2>
+    <p>Your kid Also love It</p>
+    <div className="card-actions flex gap-2">
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+      <FaStar className='text-orange-700 ml-3'></FaStar>
+    </div>
+
+    <div >
+        <button data-aos='feed-up' className='btn bg-[#AEE6AC]'>Buy Now</button>
+    </div>
+  </div>
+</div>
+<div className="card w-auto bg-base-100 shadow-xl" data-aos='feed-up'>
   <figure className="px-10 pt-10">
     <img src={pi1} alt="Shoes" className="rounded-xl" />
   </figure>
@@ -80,7 +156,7 @@ useEffect(()=>{
     </div>
   </div>
 </div>
-<div className="card w-96 bg-base-100 shadow-xl">
+<div className="card w-auto bg-base-100 shadow-xl" data-aos='feed-up'>
   <figure className="px-10 pt-10">
     <img src={pi1} alt="Shoes" className="rounded-xl" />
   </figure>
@@ -95,83 +171,7 @@ useEffect(()=>{
     </div>
 
     <div >
-        <button data-aos='feed-up' className='btn bg-[#AEE6AC]'>Buy Now</button>
-    </div>
-  </div>
-</div>
-<div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src={pi1} alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">baby doll</h2>
-    <p>Your kid Also love It</p>
-    <div className="card-actions flex gap-2">
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-    </div>
-
-    <div >
-        <button data-aos='feed-up' className='btn bg-[#AEE6AC]'>Buy Now</button>
-    </div>
-  </div>
-</div>
-<div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src={pi1} alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">baby doll</h2>
-    <p>Your kid Also love It</p>
-    <div className="card-actions flex gap-2">
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-    </div>
-
-    <div >
-        <button data-aos='feed-up' className='btn bg-[#AEE6AC]'>Buy Now</button>
-    </div>
-  </div>
-</div>
-<div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src={pi1} alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">baby doll</h2>
-    <p>Your kid Also love It</p>
-    <div className="card-actions flex gap-2">
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-    </div>
-
-    <div >
-        <button data-aos='feed-up' className='btn bg-[#AEE6AC]'>Buy Now</button>
-    </div>
-  </div>
-</div>
-<div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src={pi1} alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">baby doll</h2>
-    <p>Your kid Also love It</p>
-    <div className="card-actions flex gap-2">
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-      <FaStar className='text-orange-700 ml-3'></FaStar>
-    </div>
-
-    <div >
-        <button data-aos='feed-up' className='btn bg-[#AEE6AC]'>Buy Now</button>
+        <button  className='btn bg-[#AEE6AC]'>Buy Now</button>
     </div>
   </div>
 </div>
