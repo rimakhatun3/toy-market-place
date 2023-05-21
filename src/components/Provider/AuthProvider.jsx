@@ -22,9 +22,9 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
 
-    const updateUser =()=>{
+    const updateUser =(name,photo)=>{
         updateProfile(auth.currentUser,{
-           displayName:"RimaKhatun",photoURL:'https://i.ibb.co/F691yGR/river-Clean.png'
+           displayName:name,photoURL:photo
        })
        .then(()=>{
            console.log('profile is update')

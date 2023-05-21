@@ -20,7 +20,7 @@ const handleSignUp=(event)=>{
   .then(result=>{
     // const user = result.user;
     console.log(result)
-    updateUser()
+    updateUser(name,photo)
     
   })
 

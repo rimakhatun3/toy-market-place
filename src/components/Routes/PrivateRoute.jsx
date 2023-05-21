@@ -13,7 +13,7 @@ const location = useLocation()
     }
 
     if(!user){
-        alert('login first')
+        alert('You have to log in first to view details')
     }
     else{
         return children
