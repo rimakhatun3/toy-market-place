@@ -37,7 +37,7 @@ const {user} = useContext(AuthContext)
     // },[selected])
     
     useEffect(()=>{
-        fetch(`https://toy-marketplace-server-one.vercel.app/toys?email?${user?.email}`)
+        fetch(`https://toy-marketplace-server-one.vercel.app/toys?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>setMyToys(data))
     },[])
@@ -81,13 +81,13 @@ const {user} = useContext(AuthContext)
     return (
         <div className='mt-10 '>
 
-<div className='text-center mb-8'>
+{/* <div className='text-center mb-8'>
 <select  className="select select-bordered w-full max-w-xs ">
   <option disabled selected>sort by</option>
   <option value='asending' >acending</option>
   <option value='descending' >descending</option>
 </select>
-</div>
+</div> */}
 
 
              <div className="overflow-x-auto ">

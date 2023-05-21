@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const  AllToys = () => {
-    const allToys = useLoaderData()
+    // const allToys = useLoaderData()
+    const [allToys,setAlltoys] = useState([])
+
+    useEffect(()=>{
+      fetch('https://toy-marketplace-server-one.vercel.app/alltoys')
+      .then(res=>res.json())
+      .then(data=>setAlltoys(data))
+    },[])
+
     // console.log(allToys)
+    const [searchText , setSearchText] = useState("")
+
+    const handleSearch =()=>{
+fetch(`https://toy-marketplace-server-one.vercel.app/searchByText/${searchText}`)
+.then(res=>res.json())
+.then(data=>setAlltoys(data))
+    }
+
     return (
         <div className='mt-12'>
+<div className=' flex  my-5'>
+          <input onChange={(e)=>setSearchText(e.target.value)} placeholder='search here' className='border p-2 me-2 px-4 rounded-lg' type="text" /> 
+        <button onClick={handleSearch} className='btn bg-[#AEE6AC]'> Lets Explore <FaArrowRight className='ml-3'/> </button>
+        </div>
+
             <div className="overflow-x-auto">
   <table className="table table-zebra w-full">
     {/* head */}
