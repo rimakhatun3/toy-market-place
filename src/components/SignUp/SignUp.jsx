@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import signupLogo from '../../assets/logos/signup.avif'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import useTitle from '../title';
 const SignUp = () => {
-
+useTitle('sign up')
 const {createUser,updateUser} = useContext(AuthContext)
 
 const handleSignUp=(event)=>{

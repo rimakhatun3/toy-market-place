@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../title';
 
 const  AllToys = () => {
     // const allToys = useLoaderData()
     const [allToys,setAlltoys] = useState([])
 
-   
+   useTitle('alltoys')
 
     useEffect(()=>{
       fetch('https://toy-marketplace-server-one.vercel.app/alltoys')

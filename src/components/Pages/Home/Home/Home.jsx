@@ -13,8 +13,11 @@ import pi4 from '../../../../assets/images/spe1.avif'
 
 import { FaChild,  FaFileImage,  FaOsi, FaPagelines,   FaPlayCircle, FaStar, FaUserCheck,  } from 'react-icons/fa';
 import Aos from 'aos';
+import useTitle from '../../../title';
 
 const Home = () => {
+useTitle('home')
+
     const [activetab, setActiveTab] = useState('Baby Dolls')
     const [categories, setCategories] = useState([])
 

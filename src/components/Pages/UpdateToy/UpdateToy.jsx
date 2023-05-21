@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../title';
 
 const UpdateToy = () => {
+  useTitle('updateToys')
 const toy = useLoaderData()
 console.log(toy)
 
@@ -51,7 +53,7 @@ console.log(toy)
     }
     return (
         <div>
-            <div className="hero min-h-screen bg-slate-100">
+            <div className="hero min-h-screen bg-slate-100 mt-10">
     <form onSubmit={handleToyUpdate} className="card  w-1/2  shadow-2xl bg-base-100">
       <div className="card-body">
         <div className="form-control">

@@ -14,27 +14,7 @@ const {user} = useContext(AuthContext)
 // }
 
     const [myToys,setMyToys] = useState([])
-    // const [selected,setSelected] = useState(option[0])
-    // const [loadding,setLoadding] = useState(true)
-
-    // useEffect(()=>{
-    //   setLoadding(true)
-    //   const fetchProduct = async () =>{
-    //     try {
-  
-    //        const [type,value] = selected.value.split('-').map(item=>item.toLowerCase())
-    //        const response = await fetch(`https://toy-marketplace-server-one.vercel.app/toys?email?${user?.email}&value=${value}$type=${type}`)
-    //        const data = await response.json()
-    //        setMyToys(data)
-    //     }
-    //     finally{
-    //       setTimeout(()=>{
-    //         setLoadding(false)
-    //       },1000)
-    //     }
-    //   }
-    //   fetchProduct()
-    // },[selected])
+    
     
     useEffect(()=>{
         fetch(`https://toy-marketplace-server-one.vercel.app/toys?email=${user?.email}`)
@@ -81,15 +61,6 @@ const {user} = useContext(AuthContext)
     return (
         <div className='mt-10 '>
 
-{/* <div className='text-center mb-8'>
-<select  className="select select-bordered w-full max-w-xs ">
-  <option disabled selected>sort by</option>
-  <option value='asending' >acending</option>
-  <option value='descending' >descending</option>
-</select>
-</div> */}
-
-
              <div className="overflow-x-auto ">
   <table className="table table-zebra w-full">
     {/* head */}
@@ -120,7 +91,7 @@ const {user} = useContext(AuthContext)
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
 </button></td>
             <td>
-            <Link to={`/update/${singleToy._id}`}><button className='btn bg-[#AEE6AC]'>Update</button></Link>
+            <Link to={`/update/${singleToy._id}`}><button className='btn bg-[#AEE6AC]'>Edit</button></Link>
             </td>
             
           </tr>)

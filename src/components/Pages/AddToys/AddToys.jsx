@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../title';
 
 const AddToys = () => {
-
+useTitle('my toys')
     const {user} = useState(AuthContext)
   
     const handleAddToy =(event)=>{
