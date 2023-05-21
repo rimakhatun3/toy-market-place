@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 
+import 'react-tabs/style/react-tabs.css';
+import Marquee from "react-fast-marquee";
 import Banner from '../Banner/Banner';
 import Gallerry from '../Gallerry/Gallerry';
 import Category from '../Category/Category';
-import SpecialToy from '../../SpeacialToy/SpecialToy';
-import { FaChild, FaFile, FaFileExcel, FaFileImage, FaFilePdf, FaHireAHelper, FaOsi, FaPage4, FaPagelines, FaPager, FaPaperclip, FaPlayCircle, FaUserCheck, FaViadeo } from 'react-icons/fa';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
+
+
+import { FaChild,  FaFileImage,  FaOsi, FaPagelines,   FaPlayCircle, FaUserCheck,  } from 'react-icons/fa';
+
 const Home = () => {
     const [activetab, setActiveTab] = useState('Baby Dolls')
     const [categories, setCategories] = useState([])
 
-    // useEffect(() => {
-    //     fetch('https://toy-marketplace-server-one.vercel.app//alltoys')
-    //         .then(res => res.json())
-    //         .then(data => setCategories(data))
-    // }, [])
 
 
     useEffect(() => {
-        fetch(`https://toy-marketplace-server-one.vercel.app/alltoys/${activetab}`)
+        fetch(`https://toy-marketplace-server-one.vercel.app/all/${activetab}`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [activetab])
@@ -36,12 +31,20 @@ const Home = () => {
             <Gallerry></Gallerry>
 
             <section>
-                <h1 className='text-2xl font-bold text-center my-8'>Our Speacia Collection</h1>
-                <div className='grid lg:grid-cols-3 gap-4'>
-                    {
-                        categories.map(specialToy => <SpecialToy key={specialToy._id} specialToy={specialToy}></SpecialToy>)
-                    }
+                <h1 className='text-2xl font-bold text-center my-8'>Exclusive Collection</h1>
+                <div className='space-x-4 text-center'>
+                    <button className='py-2 px-6 bg-pink-500 rounded-e-2xl rounded-s-2xl'>Feature Product</button>
+                    <button className='py-2 px-6 bg-purple-200 rounded-e-2xl rounded-s-2xl'>New Product</button>
+                    <button className='py-2 px-6 bg-blue-300 rounded-e-2xl rounded-s-2xl'>Latest Product</button>
                 </div>
+
+                <div>
+                <Marquee>
+  I can be a React component, multiple React components, or just some text.
+</Marquee>
+                </div>
+
+                
 
             </section>
 

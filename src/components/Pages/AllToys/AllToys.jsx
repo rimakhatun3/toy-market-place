@@ -9,7 +9,7 @@ const  AllToys = () => {
    
 
     useEffect(()=>{
-      fetch('https://toy-marketplace-server-one.vercel.app//alltoys')
+      fetch('https://toy-marketplace-server-one.vercel.app/alltoys')
       .then(res=>res.json())
       .then(data=>setAlltoys(data))
     },[])
@@ -18,7 +18,7 @@ const  AllToys = () => {
     const [searchText , setSearchText] = useState("")
 
     const handleSearch =()=>{
-fetch(`https://toy-marketplace-server-one.vercel.app//searchByText/${searchText}`)
+fetch(`https://toy-marketplace-server-one.vercel.app/searchByText/${searchText}`)
 .then(res=>res.json())
 .then(data=>setAlltoys(data))
     }
