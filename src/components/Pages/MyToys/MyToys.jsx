@@ -72,6 +72,7 @@ const {user} = useContext(AuthContext)
         <th>SubCategory</th>
         <th>Price</th>
         <th>AvailableQuantity</th>
+        <th>Details</th>
         <th>Delete</th>
         <th>Update</th>
       </tr>
@@ -87,6 +88,7 @@ const {user} = useContext(AuthContext)
             <td>{singleToy.category}</td>
             <td>{singleToy.price}</td>
             <td>{singleToy.quantity}</td>
+            <td>{singleToy.details.slice(0,20)}..</td>
             <td><button onClick={()=>handleRemove(singleToy._id)} className="btn btn-circle">
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
 </button></td>
